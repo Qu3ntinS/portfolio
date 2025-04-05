@@ -3,8 +3,11 @@
 import React from 'react';
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
+import { useTheme } from '../context/ThemeContext';
 
 const Hero = () => {
+  const { isDarkMode } = useTheme();
+
   return (
     <section className="relative h-[88vh] w-full bg-[#00AEFF]">
       <div className="container mx-auto px-4 h-full">
@@ -14,7 +17,7 @@ const Hero = () => {
             {/* Avatar positioned absolutely */}
             <div className="absolute top-0 -right-[1%] w-[450px] h-[450px] flex items-center justify-center">
               <Image
-                src="/portfolio/avatar-background.svg"
+                src={isDarkMode ? "/portfolio/avatar-background-light.svg" : "/portfolio/avatar-background.svg"}
                 alt="Avatar Background"
                 width={600}
                 height={600}
@@ -40,9 +43,11 @@ const Hero = () => {
                     1000,
                     "I'm a Full Stack Developer!",
                     1000,
-                    "I love creating awesome stuff!",
+                    "I love cars!",
                     1000,
                     "I'm passionate about coding!",
+                    1000,
+                    "Checkout the White Mode!",
                     1000,
                   ]}
                   wrapper="span"
@@ -65,7 +70,7 @@ const Hero = () => {
       </div>
 
       {/* Wave Transition */}
-      <div className="bottom-0 left-0 right-0 w-full">
+      <div className="bottom-0 left-0 right-0 w-full relative top-[-100px]">
         <Image
           src="/portfolio/wave.svg"
           alt="Wave Transition"

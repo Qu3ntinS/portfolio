@@ -9,7 +9,7 @@ export default function Home() {
       <Hero />
       
       {/* Experience Section */}
-      <section className="bg-[#0A0A0A] min-h-screen">
+      <section className="bg-background light:bg-background-light min-h-screen">
         <div className="container mx-auto px-4 py-20">
           {/*<h2 className="text-4xl font-bold text-white">Experience</h2>*/}
         </div>

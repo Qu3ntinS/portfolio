@@ -42,7 +42,7 @@ const Navbar = () => {
           {/* Discord Button */}
           <Link
             href="#discord"
-            className="bg-background text-text light:text-text-light light:bg-background-light px-6 py-2 rounded-full hover:bg-opacity-90 transition-colors"
+            className="bg-secondary text-text light:text-text-light light:bg-secondary-light px-6 py-2 rounded-full hover:bg-opacity-90 transition-colors"
           >
             Discord
           </Link>

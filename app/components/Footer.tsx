@@ -32,70 +32,104 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative py-8 bg-primary ">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col items-center gap-6">
-            {/* Theme Toggle */}
-            <div className="flex items-center gap-2">
-              <span className="text-text">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="currentColor"/>
-                  <path d="M12 3C12.5523 3 13 3.44772 13 4V5C13 5.55228 12.5523 6 12 6C11.4477 6 11 5.55228 11 5V4C11 3.44772 11.4477 3 12 3Z" fill="currentColor"/>
-                  <path d="M12 18C12.5523 18 13 18.4477 13 19V20C13 20.5523 12.5523 21 12 21C11.4477 21 11 20.5523 11 20V19C11 18.4477 11.4477 18 12 18Z" fill="currentColor"/>
-                  <path d="M21 11C21.5523 11 22 11.4477 22 12C22 12.5523 21.5523 13 21 13H20C19.4477 13 19 12.5523 19 12C19 11.4477 19.4477 11 20 11H21Z" fill="currentColor"/>
-                  <path d="M6 12C6 11.4477 5.55228 11 5 11H4C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13H5C5.55228 13 6 12.5523 6 12Z" fill="currentColor"/>
-                </svg>
-              </span>
-              <button
-                onClick={toggleTheme}
-                className="w-12 h-6 rounded-full bg-secondary-light dark:bg-secondary flex items-center transition-all duration-300 focus:outline-none"
-                aria-label="Toggle theme"
-              >
+    <footer className="relative w-full bg-background light:bg-background-light">
+      {/* Wave Background */}
+      <div className="absolute top-0 left-0 right-0 w-full">
+        <Image
+          src="/portfolio/footer-wave.svg"
+          alt="Footer Wave"
+          width={1440}
+          height={250}
+          className="w-full"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="flex flex-col items-center gap-4 pt-[120px] pb-4">
+          {/* Theme Toggle */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={toggleTheme}
+              className={`w-[60px] h-[30px] rounded-full flex items-center p-[4px] transition-all duration-300 focus:outline-none ${
+                isDarkMode ? 'bg-[#F0F0F0]' : 'bg-[#0F0F0F]'
+              }`}
+              aria-label="Toggle theme"
+            >
+              <div className="relative w-full h-full">
+                {/* Moon Icon */}
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 ml-[4px]">
+                  <svg width="16" height="16" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clipPath="url(#clip0_22_32)">
+                      <path d="M6.20831 5.51074C6.20831 4.19504 6.4021 2.86344 6.89581 1.72949C3.61171 3.15906 1.39581 6.51277 1.39581 10.3232C1.39581 15.449 5.55132 19.6045 10.6771 19.6045C14.4875 19.6045 17.8412 17.3886 19.2708 14.1045C18.1369 14.5982 16.8053 14.792 15.4896 14.792C10.3638 14.792 6.20831 10.6365 6.20831 5.51074Z" stroke="#F7FAFD" strokeLinecap="round" strokeLinejoin="round"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_22_32">
+                        <rect width="20" height="20" fill="white" transform="translate(0.333313 0.666992)"/>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+                {/* Sun Icon */}
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 mr-[4px]">
+                  <svg width="16" height="16" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M256 48v48M256 416v48M403.08 108.92l-33.94 33.94M142.86 369.14l-33.94 33.94M464 256h-48M96 256H48M403.08 403.08l-33.94-33.94M142.86 142.86l-33.94-33.94" 
+                      stroke={isDarkMode ? "#000000" : "#F7FAFD" } 
+                      strokeLinecap="round" 
+                      strokeMiterlimit="10" 
+                      strokeWidth="32"
+                    />
+                    <circle 
+                      cx="256" 
+                      cy="256" 
+                      r="80" 
+                      stroke={isDarkMode ? "#000000" : "#F7FAFD"} 
+                      strokeLinecap="round" 
+                      strokeMiterlimit="10" 
+                      strokeWidth="32"
+                    />
+                  </svg>
+                </div>
+                {/* Toggle Circle */}
                 <div 
-                  className={`w-5 h-5 rounded-full transition-all duration-300 ${
+                  className={`w-[22px] h-[22px] rounded-full absolute top-1/2 -translate-y-1/2 transition-all duration-300 ${
                     isDarkMode 
-                      ? 'ml-1 bg-accent' 
-                      : 'ml-6 bg-accent-light'
+                      ? 'left-0 bg-[#7091A4]' 
+                      : 'left-[calc(100%-22px)] bg-[#5B7CBF]'
                   }`}
                 />
-              </button>
-              <span className="text-text">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fillRule="evenodd" clipRule="evenodd" d="M12.2256 2.00253C9.59172 1.94346 6.93894 2.9189 4.92893 4.92891C1.02369 8.83415 1.02369 15.1658 4.92893 19.071C8.83418 22.9763 15.1658 22.9763 19.0711 19.071C21.0811 17.061 22.0565 14.4082 21.9975 11.7743C21.9796 10.9772 21.8669 10.1818 21.6595 9.40643C21.0933 9.9488 20.3275 10.2922 19.4872 10.3367C18.6469 10.3813 17.8414 10.1331 17.2162 9.63615C16.5911 9.13917 16.1896 8.42159 16.0838 7.63131C15.9781 6.84104 16.1676 6.0392 16.6195 5.35767C17.0715 4.67614 17.7505 4.15775 18.5410 3.89571C16.7416 2.66843 14.5992 1.99014 12.2256 2.00253Z" fill="currentColor"/>
-                </svg>
-              </span>
-            </div>
+              </div>
+            </button>
+          </div>
 
-            {/* Social Links */}
-            <div className="flex items-center gap-4">
-              {socialLinks.map((link) => (
-                <Link 
-                  key={link.name}
-                  href={link.href}
-                  className="text-text light:text-text-light hover:opacity-80 transition-opacity"
-                >
-                  <Image
-                    src={link.icon}
-                    alt={link.name}
-                    width={24}
-                    height={24}
-                    className="w-6 h-6"
-                  />
-                </Link>
-              ))}
-            </div>
+          {/* Social Links */}
+          <div className="flex items-center gap-4">
+            {socialLinks.map((link) => (
+              <Link 
+                key={link.name}
+                href={link.href}
+                className="text-white hover:opacity-80 transition-opacity"
+              >
+                <Image
+                  src={link.icon}
+                  alt={link.name}
+                  width={24}
+                  height={24}
+                  className="w-8 h-8 brightness-0 invert"
+                />
+              </Link>
+            ))}
+          </div>
 
-            {/* Links */}
-            <div className="flex items-center gap-4 text-text">
-              <Link href="/impressum">Impressum</Link>
-              <Link href="/datenschutz">Datenschutz</Link>
-            </div>
+          {/* Links */}
+          <div className="flex items-center gap-4 text-white">
+            <Link href="/impressum" className="text-sm hover:opacity-80 transition-opacity">Impressum</Link>
+            <Link href="/datenschutz" className="text-sm hover:opacity-80 transition-opacity">Datenschutz</Link>
+          </div>
 
-            {/* Copyright */}
-            <div className="text-text text-sm">
-              © Copyright {new Date().getFullYear()} | Made with <span className="text-red-500">❤</span> by Quentin
-            </div>
+          {/* Copyright */}
+          <div className="text-white text-sm">
+            © Copyright {new Date().getFullYear()} | Made with <span className="text-red-500">❤</span> by Quentin
           </div>
         </div>
       </div>
