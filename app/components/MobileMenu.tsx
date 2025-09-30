@@ -25,18 +25,29 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
     }
   }, [isOpen]);
 
-  // Prevent body scroll when menu is open
+  // Prevent body scroll when menu is open (iOS Safari compatible)
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
+      // Store current scroll position
+      const scrollY = window.scrollY;
 
-    // Cleanup on unmount
-    return () => {
-      document.body.style.overflow = "unset";
-    };
+      // Apply styles to prevent scrolling
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.overflow = "hidden";
+
+      return () => {
+        // Restore scroll position and styles
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.left = "";
+        document.body.style.right = "";
+        document.body.style.overflow = "";
+        window.scrollTo(0, scrollY);
+      };
+    }
   }, [isOpen]);
 
   // Close menu on escape key
@@ -69,11 +80,15 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
       style={{
         transformOrigin: "top center",
       }}
+      onTouchMove={(e) => e.preventDefault()} // Prevent iOS scroll
     >
       {/* Full Screen Overlay */}
       <div className="absolute inset-0 bg-primary light:bg-primary-light">
         {/* Content Container */}
-        <div className="flex flex-col h-full pt-24 pb-8 px-6">
+        <div
+          className="flex flex-col h-full pt-24 pb-8 px-6"
+          onTouchMove={(e) => e.stopPropagation()} // Allow scrolling within content if needed
+        >
           {/* Navigation Items */}
           <nav className="flex-1 flex flex-col justify-center space-y-8">
             {navItems.map((item, index) => (

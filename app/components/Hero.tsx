@@ -51,7 +51,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-[100vh] w-full bg-[#00AEFF] overflow-hidden">
+    <section className="relative h-[100vh] w-full bg-primary overflow-hidden">
       <div className="container mx-auto px-4 h-full">
         <div className="max-w-6xl mx-auto pt-40">
           {/* Content Box */}
@@ -110,7 +110,7 @@ const Hero = () => {
             <div className="flex flex-row items-center md:justify-start justify-center gap-[10px] text-white mt-40 sm:mt-48 md:mt-24">
               <span className="text-sm sm:text-base">Scroll down</span>
               <div className="w-6 h-10 rounded-full border-2 border-white flex items-start p-[7px]">
-                <div className="w-1.5 h-2 bg-white rounded-full mx-auto animate-bounce"></div>
+                <div className="w-1.5 h-2 bg-text rounded-full mx-auto animate-bounce"></div>
               </div>
             </div>
           </div>
