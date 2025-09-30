@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./context/ThemeContext";
 import Footer from "./components/Footer";
+import ParticleBackground from "./components/ParticleBackground";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         className={`${inter.className} bg-background light:bg-background-light text-text light:text-text-light transition-colors duration-300`}
       >
         <ThemeProvider>
+          <ParticleBackground />
           {children}
           <Footer />
         </ThemeProvider>
