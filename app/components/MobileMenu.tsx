@@ -81,7 +81,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
                 key={item.label}
                 href={item.href}
                 onClick={onClose}
-                className={`text-2xl font-medium text-text light:text-text-light hover:text-secondary light:hover:text-secondary-light transition-all duration-300 transform hover:translate-x-2 ${
+                className={`text-2xl font-medium text-text hover:text-secondary light:hover:text-secondary-light transition-all duration-300 transform hover:translate-x-2 ${
                   isOpen ? "animate-fadeInUp" : ""
                 }`}
                 style={{
@@ -98,7 +98,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
             <Link
               href="#discord"
               onClick={onClose}
-              className="block w-full text-center bg-secondary light:bg-secondary-light text-text light:text-text-light px-8 py-4 rounded-full hover:bg-opacity-90 transition-colors font-medium text-lg"
+              className="block w-full text-center bg-secondary text-text px-8 py-4 rounded-full hover:bg-opacity-90 transition-colors font-medium text-lg"
             >
               Discord
             </Link>
