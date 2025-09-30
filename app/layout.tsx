@@ -18,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-background light:bg-background-light text-text light:text-text-light transition-colors duration-300`}>
+      <body
+        className={`${inter.className} bg-background light:bg-background-light text-text light:text-text-light transition-colors duration-300`}
+      >
         <ThemeProvider>
           {children}
           <Footer />

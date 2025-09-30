@@ -25,3 +25,57 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Mobile Menu Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Mobile Menu Expand/Collapse Animations */
+@keyframes expandFromNavbar {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes collapseToNavbar {
+  0% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+}
+
+.animate-expandFromNavbar {
+  animation: expandFromNavbar 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  transform-origin: top center;
+}
+
+.animate-collapseToNavbar {
+  animation: collapseToNavbar 0.3s cubic-bezier(0.55, 0.06, 0.68, 0.19) forwards;
+  transform-origin: top center;
+}

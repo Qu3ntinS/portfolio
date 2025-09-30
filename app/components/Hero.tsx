@@ -51,7 +51,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-[88vh] w-full bg-[#00AEFF] overflow-hidden">
+    <section className="relative h-[100vh] w-full bg-[#00AEFF] overflow-hidden">
       <div className="container mx-auto px-4 h-full">
         <div className="max-w-6xl mx-auto pt-40">
           {/* Content Box */}
@@ -81,7 +81,7 @@ const Hero = () => {
 
             {/* Text Content - Positioned relative to avatar */}
             <div className="text-white relative z-10 mt-16 sm:mt-20 md:mt-24">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">
+              <h1 className="text-3xl sm:text-4xl md:text-4xl font-bold mb-2">
                 Hi, I'm Quentin.
               </h1>
               <div className="text-lg sm:text-xl h-[30px]">
@@ -118,15 +118,15 @@ const Hero = () => {
       </div>
 
       {/* Wave Transition */}
-      <div className="absolute bottom-0 left-0 right-0 w-full">
+      <div className="absolute bottom-0 left-0 right-0 w-full bg-background light:bg-background-light">
         <Wave
-          fill={isDarkMode ? "#ffffff" : "#000000"}
+          fill={"#00AEFF"}
           paused={false}
           style={{
             display: "flex",
           }}
           options={waveOptions}
-          className="w-full h-[150px] sm:h-[100px] md:h-[120px] lg:h-[150px]"
+          className="w-full h-[150px] sm:h-[120px] md:h-[130px] lg:h-[150px] rotate-180"
         />
       </div>
     </section>
