@@ -1,34 +1,42 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useTheme } from '../context/ThemeContext';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useTheme } from "../context/ThemeContext";
 
 const Footer = () => {
   const { isDarkMode, toggleTheme } = useTheme();
 
   const socialLinks = [
     {
-      name: 'Stack Overflow',
-      icon: '/portfolio/social/stackoverflow-logo.svg',
-      href: '#'
+      name: "Stack Overflow",
+      icon: isDarkMode
+        ? "/portfolio/social/light/stackoverflow-logo.svg"
+        : "/portfolio/social/dark/stackoverflow-logo.svg",
+      href: "#",
     },
     {
-      name: 'Instagram',
-      icon: '/portfolio/social/instagram-logo.svg',
-      href: '#'
+      name: "Instagram",
+      icon: isDarkMode
+        ? "/portfolio/social/light/instagram-logo.svg"
+        : "/portfolio/social/dark/instagram-logo.svg",
+      href: "#",
     },
     {
-      name: 'GitHub',
-      icon: '/portfolio/social/github-logo.svg',
-      href: '#'
+      name: "GitHub",
+      icon: isDarkMode
+        ? "/portfolio/social/light/github-logo.svg"
+        : "/portfolio/social/dark/github-logo.svg",
+      href: "#",
     },
     {
-      name: 'LinkedIn',
-      icon: '/portfolio/social/linkedin-logo.svg',
-      href: '#'
-    }
+      name: "LinkedIn",
+      icon: isDarkMode
+        ? "/portfolio/social/light/linkedin-logo.svg"
+        : "/portfolio/social/dark/linkedin-logo.svg",
+      href: "#",
+    },
   ];
 
   return (
@@ -52,50 +60,73 @@ const Footer = () => {
             <button
               onClick={toggleTheme}
               className={`w-[60px] h-[30px] rounded-full flex items-center p-[4px] transition-all duration-300 focus:outline-none ${
-                isDarkMode ? 'bg-[#F0F0F0]' : 'bg-[#0F0F0F]'
+                isDarkMode ? "bg-[#F0F0F0]" : "bg-[#0F0F0F]"
               }`}
               aria-label="Toggle theme"
             >
               <div className="relative w-full h-full">
                 {/* Moon Icon */}
                 <div className="absolute left-0 top-1/2 -translate-y-1/2 ml-[4px]">
-                  <svg width="16" height="16" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 21 21"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <g clipPath="url(#clip0_22_32)">
-                      <path d="M6.20831 5.51074C6.20831 4.19504 6.4021 2.86344 6.89581 1.72949C3.61171 3.15906 1.39581 6.51277 1.39581 10.3232C1.39581 15.449 5.55132 19.6045 10.6771 19.6045C14.4875 19.6045 17.8412 17.3886 19.2708 14.1045C18.1369 14.5982 16.8053 14.792 15.4896 14.792C10.3638 14.792 6.20831 10.6365 6.20831 5.51074Z" stroke="#F7FAFD" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path
+                        d="M6.20831 5.51074C6.20831 4.19504 6.4021 2.86344 6.89581 1.72949C3.61171 3.15906 1.39581 6.51277 1.39581 10.3232C1.39581 15.449 5.55132 19.6045 10.6771 19.6045C14.4875 19.6045 17.8412 17.3886 19.2708 14.1045C18.1369 14.5982 16.8053 14.792 15.4896 14.792C10.3638 14.792 6.20831 10.6365 6.20831 5.51074Z"
+                        stroke="#F7FAFD"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </g>
                     <defs>
                       <clipPath id="clip0_22_32">
-                        <rect width="20" height="20" fill="white" transform="translate(0.333313 0.666992)"/>
+                        <rect
+                          width="20"
+                          height="20"
+                          fill="white"
+                          transform="translate(0.333313 0.666992)"
+                        />
                       </clipPath>
                     </defs>
                   </svg>
                 </div>
                 {/* Sun Icon */}
                 <div className="absolute right-0 top-1/2 -translate-y-1/2 mr-[4px]">
-                  <svg width="16" height="16" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M256 48v48M256 416v48M403.08 108.92l-33.94 33.94M142.86 369.14l-33.94 33.94M464 256h-48M96 256H48M403.08 403.08l-33.94-33.94M142.86 142.86l-33.94-33.94" 
-                      stroke={isDarkMode ? "#000000" : "#F7FAFD" } 
-                      strokeLinecap="round" 
-                      strokeMiterlimit="10" 
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 512 512"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M256 48v48M256 416v48M403.08 108.92l-33.94 33.94M142.86 369.14l-33.94 33.94M464 256h-48M96 256H48M403.08 403.08l-33.94-33.94M142.86 142.86l-33.94-33.94"
+                      stroke={isDarkMode ? "#000000" : "#F7FAFD"}
+                      strokeLinecap="round"
+                      strokeMiterlimit="10"
                       strokeWidth="32"
                     />
-                    <circle 
-                      cx="256" 
-                      cy="256" 
-                      r="80" 
-                      stroke={isDarkMode ? "#000000" : "#F7FAFD"} 
-                      strokeLinecap="round" 
-                      strokeMiterlimit="10" 
+                    <circle
+                      cx="256"
+                      cy="256"
+                      r="80"
+                      stroke={isDarkMode ? "#000000" : "#F7FAFD"}
+                      strokeLinecap="round"
+                      strokeMiterlimit="10"
                       strokeWidth="32"
                     />
                   </svg>
                 </div>
                 {/* Toggle Circle */}
-                <div 
+                <div
                   className={`w-[22px] h-[22px] rounded-full absolute top-1/2 -translate-y-1/2 transition-all duration-300 ${
-                    isDarkMode 
-                      ? 'left-0 bg-[#7091A4]' 
-                      : 'left-[calc(100%-22px)] bg-[#5B7CBF]'
+                    isDarkMode
+                      ? "left-0 bg-[#7091A4]"
+                      : "left-[calc(100%-22px)] bg-[#5B7CBF]"
                   }`}
                 />
               </div>
@@ -105,31 +136,42 @@ const Footer = () => {
           {/* Social Links */}
           <div className="flex items-center gap-4">
             {socialLinks.map((link) => (
-              <Link 
+              <Link
                 key={link.name}
                 href={link.href}
-                className="text-white hover:opacity-80 transition-opacity"
+                className="text-text light:text-text-light hover:opacity-80 transition-opacity"
               >
                 <Image
                   src={link.icon}
                   alt={link.name}
                   width={24}
                   height={24}
-                  className="w-8 h-8 brightness-0 invert"
+                  className="w-8 h-8"
                 />
               </Link>
             ))}
           </div>
 
           {/* Links */}
-          <div className="flex items-center gap-4 text-white">
-            <Link href="/impressum" className="text-sm hover:opacity-80 transition-opacity">Impressum</Link>
-            <Link href="/datenschutz" className="text-sm hover:opacity-80 transition-opacity">Datenschutz</Link>
+          <div className="flex items-center gap-4 text-text light:text-text-light">
+            <Link
+              href="/impressum"
+              className="text-sm hover:opacity-80 transition-opacity"
+            >
+              Impressum
+            </Link>
+            <Link
+              href="/datenschutz"
+              className="text-sm hover:opacity-80 transition-opacity"
+            >
+              Datenschutz
+            </Link>
           </div>
 
           {/* Copyright */}
-          <div className="text-white text-sm">
-            © Copyright {new Date().getFullYear()} | Made with <span className="text-red-500">❤</span> by Quentin
+          <div className="text-text light:text-text-light text-sm">
+            © Copyright {new Date().getFullYear()} | Made with{" "}
+            <span className="text-red-500">❤️</span> by Quentin
           </div>
         </div>
       </div>
@@ -137,4 +179,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Footer;
