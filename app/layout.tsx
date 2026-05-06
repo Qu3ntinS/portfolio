@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./context/ThemeContext";
 import Footer from "./components/Footer";
+import ScrollTimeline from "./components/ScrollTimeline";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,8 +21,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} text-white transition-colors duration-300`}>
         <ThemeProvider>
-          {children}
-          <Footer />
+          <div className="relative">
+            <ScrollTimeline />
+            {children}
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
