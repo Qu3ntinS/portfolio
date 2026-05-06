@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./context/ThemeContext";
 import Footer from "./components/Footer";
+import ParticleBackground from "./components/ParticleBackground";
 import ScrollTimeline from "./components/ScrollTimeline";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -23,6 +24,7 @@ export default function RootLayout({
         <ThemeProvider>
           <div className="relative">
             <ScrollTimeline />
+            <ParticleBackground />
             {children}
             <Footer />
           </div>

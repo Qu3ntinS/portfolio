@@ -1,18 +1,19 @@
-import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Experience from './components/Experience';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import About from './components/About';
-import Contact from './components/Contact';
+"use client";
+
+import React from "react";
+import Navbar from "./components/navbar/Navbar";
+import Hero from "./components/Hero";
+import Experience from "./components/sections/Experience";
+import Skills from "./components/sections/Skills";
+import Projects from "./components/sections/Projects";
+import About from "./components/sections/About";
+import Contact from "./components/sections/Contact";
 
 export default function Home() {
   return (
     <main>
       <Navbar />
       <Hero />
-      {/* Anchor for ScrollTimeline left-position calculation */}
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div id="timeline-anchor" className="h-0" />
