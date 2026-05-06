@@ -9,7 +9,7 @@ const Hero = () => {
   const { isDarkMode } = useTheme();
 
   return (
-    <section className="relative h-[88vh] w-full bg-[#00AEFF]">
+    <section id="hero" className="relative h-[88vh] w-full bg-primary light:bg-primary-light">
       <div className="container mx-auto px-4 h-full">
         <div className="max-w-6xl mx-auto pt-40">
           {/* Content Box */}
@@ -70,7 +70,7 @@ const Hero = () => {
       </div>
 
       {/* Wave Transition */}
-      <div className="bottom-0 left-0 right-0 w-full relative top-[-100px]">
+      <div className="bottom-0 left-0 right-0 w-full relative top-[-100px] bg-background light:bg-background-light">
         <Image
           src="/portfolio/wave.svg"
           alt="Wave Transition"

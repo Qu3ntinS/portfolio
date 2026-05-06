@@ -1,19 +1,18 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Experience from './components/Experience';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <main>
       <Navbar />
       <Hero />
-      
-      {/* Experience Section */}
-      <section className="bg-background light:bg-background-light min-h-screen">
-        <div className="container mx-auto px-4 py-20">
-          {/*<h2 className="text-4xl font-bold text-white">Experience</h2>*/}
-        </div>
-      </section>
-    </div>
+      <Experience />
+      <Skills />
+      <Projects />
+    </main>
   );
 }
