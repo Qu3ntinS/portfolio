@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./context/ThemeContext";
-import Footer from "./components/Footer";
-import ParticleBackground from "./components/ParticleBackground";
-import ScrollTimeline from "./components/ScrollTimeline";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-  title: "Quentin's Portfolio",
-  description: "Full Stack Developer Portfolio",
+  title: "Quentin Thees · Portfolio",
+  description: "Full Stack Developer · Germany",
 };
 
 export default function RootLayout({
@@ -19,15 +17,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} text-white transition-colors duration-300`}>
+    <html lang="en" className="overflow-hidden">
+      <body
+        className={`${inter.variable} ${jetbrains.variable} font-sans overflow-hidden h-screen`}
+        style={{ background: "var(--bg)", color: "var(--text)" }}
+      >
         <ThemeProvider>
-          <div className="relative">
-            <ScrollTimeline />
-            <ParticleBackground />
-            {children}
-            <Footer />
-          </div>
+          <div className="global-grid" />
+          {children}
         </ThemeProvider>
       </body>
     </html>

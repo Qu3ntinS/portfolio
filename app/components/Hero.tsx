@@ -1,135 +1,120 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import { TypeAnimation } from "react-type-animation";
-import { useTheme } from "../context/ThemeContext";
-import Wave from "react-wavify";
+import React, { useEffect } from "react";
+import { playType, playPrompt } from "../lib/sounds";
 
 const Hero = () => {
-  const { isDarkMode } = useTheme();
-  const [waveOptions, setWaveOptions] = useState({
-    height: 60,
-    amplitude: 40,
-    speed: 0.3,
-    points: 4,
-  });
-
   useEffect(() => {
-    const updateWaveOptions = () => {
-      const width = window.innerWidth;
-      if (width < 640) {
-        // Mobile
-        setWaveOptions({
-          height: 40,
-          amplitude: 25,
-          speed: 0.2,
-          points: 3,
-        });
-      } else if (width < 1024) {
-        // Tablet
-        setWaveOptions({
-          height: 50,
-          amplitude: 35,
-          speed: 0.25,
-          points: 4,
-        });
-      } else {
-        // Desktop
-        setWaveOptions({
-          height: 60,
-          amplitude: 40,
-          speed: 0.3,
-          points: 4,
-        });
-      }
-    };
-
-    updateWaveOptions();
-    window.addEventListener("resize", updateWaveOptions);
-    return () => window.removeEventListener("resize", updateWaveOptions);
+    // Match CSS animation delays exactly
+    const cues: [number, () => void][] = [
+      [100,  playPrompt],   // prompt line
+      [1000, playType],     // code line 1
+      [1150, playType],     // code line 2
+      [1300, playType],     // code line 3
+      [1450, playType],     // code line 4
+      [1600, playType],     // code line 5
+    ];
+    const timers = cues.map(([delay, fn]) => setTimeout(fn, delay));
+    return () => timers.forEach(clearTimeout);
   }, []);
 
   return (
-    <section className="relative h-[100vh] w-full bg-primary overflow-hidden">
-      <div className="container mx-auto px-4 h-full">
-        <div className="max-w-6xl mx-auto pt-40">
-          {/* Content Box */}
-          <div className="flex flex-col relative">
-            {/* Avatar positioned absolutely */}
-            <div className="hidden md:flex absolute top-0 -right-[1%] w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[450px] md:h-[450px] items-center justify-center">
-              <Image
-                src={
-                  isDarkMode
-                    ? "/portfolio/avatar-background-light.svg"
-                    : "/portfolio/avatar-background.svg"
-                }
-                alt="Avatar Background"
-                width={600}
-                height={600}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%]"
-              />
-              <Image
-                src="/portfolio/boy.svg"
-                alt="Quentin's Avatar"
-                width={300}
-                height={300}
-                priority
-                className="relative z-10"
-              />
-            </div>
+  <section className="h-full flex flex-col justify-center px-[10vw] pb-12 pt-4 relative overflow-hidden">
+    <style>{`
+      @keyframes heroAppear { to { opacity: 1; } }
+      @keyframes heroNameIn {
+        from { opacity:0; transform:translateY(30px); filter:blur(8px); }
+        to   { opacity:1; transform:translateY(0);    filter:blur(0);   }
+      }
+      @keyframes heroFadeUp {
+        from { opacity:0; transform:translateY(16px); }
+        to   { opacity:1; transform:translateY(0);    }
+      }
+      @keyframes heroCursor   { 0%,49%{opacity:0} 50%,100%{opacity:1} }
+      @keyframes heroStatusBlink { 0%,100%{opacity:1} 50%{opacity:0.2} }
 
-            {/* Text Content - Positioned relative to avatar */}
-            <div className="text-white relative z-10 mt-16 sm:mt-20 md:mt-24">
-              <h1 className="text-3xl sm:text-4xl md:text-4xl font-bold mb-2">
-                Hi, I'm Quentin.
-              </h1>
-              <div className="text-lg sm:text-xl h-[30px]">
-                <TypeAnimation
-                  sequence={[
-                    "I'm very cool!",
-                    1000,
-                    "I'm a Full Stack Developer!",
-                    1000,
-                    "I love cars!",
-                    1000,
-                    "I'm passionate about coding!",
-                    1000,
-                    "Checkout the White Mode!",
-                    1000,
-                  ]}
-                  wrapper="span"
-                  speed={50}
-                  repeat={Infinity}
-                  className="opacity-90"
-                />
-              </div>
-            </div>
+      .h-prompt   { opacity:0; animation:heroAppear 0s 0.1s  forwards; }
+      .h-greeting { opacity:0; animation:heroAppear 0s 0.4s  forwards; }
+      .h-name     { opacity:0; animation:heroNameIn  0.9s 0.6s cubic-bezier(0.16,1,0.3,1) forwards; }
+      .h-c1 { opacity:0; animation:heroAppear 0s 1.0s  forwards; }
+      .h-c2 { opacity:0; animation:heroAppear 0s 1.15s forwards; }
+      .h-c3 { opacity:0; animation:heroAppear 0s 1.3s  forwards; }
+      .h-c4 { opacity:0; animation:heroAppear 0s 1.45s forwards; }
+      .h-c5 { opacity:0; animation:heroAppear 0s 1.6s  forwards; }
+      .h-cta    { opacity:0; animation:heroFadeUp 0.6s 1.9s cubic-bezier(0.16,1,0.3,1) forwards; }
+      .h-cursor {
+        display:inline-block; width:2px; height:1em;
+        background:var(--accent); margin-left:2px;
+        vertical-align:middle; opacity:0;
+        animation:heroCursor 1s 1.8s infinite;
+      }
+      .h-dot {
+        width:6px; height:6px; border-radius:50%;
+        background:var(--status-green); flex-shrink:0;
+        animation:heroStatusBlink 2s 2.5s infinite;
+      }
+      .h-btn {
+        border:1px solid var(--accent);
+        color:var(--accent);
+        background:transparent;
+        font-family:var(--font-mono),monospace;
+        font-size:12px; letter-spacing:0.12em;
+        text-transform:uppercase; padding:12px 24px;
+        cursor:pointer; transition:background 0.15s, color 0.15s;
+      }
+      .h-btn:hover { background:var(--accent); color:var(--bg); }
+    `}</style>
 
-            {/* Scroll Indicator */}
-            <div className="flex flex-row items-center md:justify-start justify-center gap-[10px] text-white mt-40 sm:mt-48 md:mt-24">
-              <span className="text-sm sm:text-base">Scroll down</span>
-              <div className="w-6 h-10 rounded-full border-2 border-white flex items-start p-[7px]">
-                <div className="w-1.5 h-2 bg-text rounded-full mx-auto animate-bounce"></div>
-              </div>
-            </div>
-          </div>
+
+    <div style={{ maxWidth: 760, position: "relative", zIndex: 1 }}>
+      <p className="h-prompt font-mono text-xs tracking-wider mb-8" style={{ color: "var(--accent-code)" }}>
+        <span style={{ color: "var(--accent)" }}>~/portfolio </span>whoami<span className="h-cursor" />
+      </p>
+
+      <div className="mb-7">
+        <span className="h-greeting font-mono block mb-2 tracking-widest"
+          style={{ fontSize: "clamp(12px,1.3vw,14px)", color: "var(--text-dim)" }}>
+          // Output:
+        </span>
+        <div className="h-name flex items-baseline" style={{
+          fontFamily: "var(--font-inter),sans-serif",
+          fontSize: "clamp(52px,7.5vw,108px)",
+          fontWeight: 700,
+          lineHeight: 0.92,
+          letterSpacing: "-0.04em",
+          gap: "0.14em",
+        }}>
+          <span style={{ color: "var(--text)" }}>Quentin</span>
+          <span style={{ color: "transparent", WebkitTextStroke: "2px var(--accent)", fontStyle: "italic" }}>Thees</span>
         </div>
       </div>
 
-      {/* Wave Transition */}
-      <div className="absolute bottom-0 left-0 right-0 w-full bg-background light:bg-background-light">
-        <Wave
-          fill={"#00AEFF"}
-          paused={false}
-          style={{
-            display: "flex",
-          }}
-          options={waveOptions}
-          className="w-full h-[150px] sm:h-[120px] md:h-[130px] lg:h-[150px] rotate-180"
-        />
+      <div className="font-mono" style={{ fontSize: 13, lineHeight: 1.9, borderLeft: "2px solid var(--accent-light)", paddingLeft: 20 }}>
+        <code className="h-c1 block whitespace-nowrap">
+          <span style={{ color: "var(--accent)" }}>const</span> developer = {"{"}
+        </code>
+        <code className="h-c2 block whitespace-nowrap">
+          &nbsp;&nbsp;age: <span style={{ color: "var(--code-num)" }}>18</span>,
+          <span style={{ color: "var(--code-comment)", fontStyle: "italic" }}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// aus Deutschland</span>
+        </code>
+        <code className="h-c3 block whitespace-nowrap">
+          &nbsp;&nbsp;role: <span style={{ color: "var(--code-str)" }}>&quot;Full Stack Developer&quot;</span>,
+        </code>
+        <code className="h-c4 block whitespace-nowrap">
+          &nbsp;&nbsp;stack: [<span style={{ color: "var(--code-str)" }}>&quot;React&quot;</span>, <span style={{ color: "var(--code-str)" }}>&quot;Node&quot;</span>, <span style={{ color: "var(--code-str)" }}>&quot;Docker&quot;</span>],
+        </code>
+        <code className="h-c5 block whitespace-nowrap">{"}"};<span className="h-cursor" /></code>
       </div>
-    </section>
+
+      <div className="h-cta flex items-center gap-8 mt-10">
+        <button className="h-btn">./explore-projects</button>
+        <div className="flex items-center gap-2 font-mono text-xs tracking-widest" style={{ color: "var(--text-muted)" }}>
+          <span className="h-dot" />
+          <span>Available for Work</span>
+        </div>
+      </div>
+    </div>
+  </section>
   );
 };
 

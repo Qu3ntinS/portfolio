@@ -10,6 +10,10 @@ const config: Config = {
   prefix: '',
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)', 'sans-serif'],
+        mono: ['var(--font-mono)', 'monospace'],
+      },
       keyframes: {
         expandFromNavbar: {
           '0%':   { transform: 'scaleY(0)', opacity: '0' },
@@ -39,7 +43,7 @@ const config: Config = {
           light: '#FFFFFF',
         },
         primary: {
-          DEFAULT: '#00AEFF',
+          DEFAULT: '#A855F7',
         },
         secondary: {
           DEFAULT: '#0F0F0F',
