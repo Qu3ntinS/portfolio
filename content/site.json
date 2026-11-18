@@ -1,0 +1,470 @@
+{
+  "meta": {
+    "title": "QuentinS — Fullstack Developer · Würzburg",
+    "shortTitle": "QuentinS",
+    "description": "Quentin (Qu3ntinS) — Fullstack Developer aus Würzburg. TypeScript, Rust, Python. Code during the day, race at night, game in between.",
+    "ogTitle": "QuentinS — Fullstack Developer",
+    "ogDescription": "Fullstack Developer with ❤️ aus Würzburg. Arch Linux, Autos, Gaming & Clean Code.",
+    "ogImage": "https://avatars.githubusercontent.com/u/69125426?v=4",
+    "github": "https://github.com/Qu3ntinS"
+  },
+  "profile": {
+    "user": "quentin",
+    "host": "arch",
+    "headHost": "arch-btw",
+    "born": "2005-07-04",
+    "githubSince": 2020,
+    "uptimeFallback": "21 Jahre",
+    "ageFallback": "21"
+  },
+  "hero": {
+    "command": "neofetch --portfolio",
+    "scrollHint": "▼ scroll für mehr",
+    "lines": [
+      {
+        "key": "OS",
+        "value": "Arch Linux x86_64 (btw)"
+      },
+      {
+        "key": "Host",
+        "value": "Würzburg · Bayern · DE 🇩🇪"
+      },
+      {
+        "key": "Kernel",
+        "value": "fullstack-6.x-quentin"
+      },
+      {
+        "key": "Uptime",
+        "value": "21 Jahre",
+        "compute": "uptime"
+      },
+      {
+        "key": "Packages",
+        "value": "23 (public repos)"
+      },
+      {
+        "key": "Shell",
+        "value": "TypeScript · Rust · Python"
+      },
+      {
+        "key": "DE",
+        "value": "Next.js + React"
+      },
+      {
+        "key": "Terminal",
+        "value": "quentins.dev",
+        "href": "https://quentins.dev"
+      },
+      {
+        "key": "CPU",
+        "value": "Coffee Lake ☕ @ 4.2 GHz"
+      },
+      {
+        "key": "GPU",
+        "value": "Tire-Smoke RTX 🏎️💨"
+      },
+      {
+        "key": "Memory",
+        "value": "640K Ideas / ∞ RAM"
+      }
+    ],
+    "ctas": [
+      {
+        "label": "./projekte --anzeigen",
+        "href": "#projects",
+        "variant": "solid",
+        "external": false
+      },
+      {
+        "label": "git clone quentin",
+        "href": "https://github.com/Qu3ntinS",
+        "variant": "line",
+        "external": true
+      },
+      {
+        "label": "ping mich",
+        "href": "#contact",
+        "variant": "ghost",
+        "external": false
+      }
+    ]
+  },
+  "headings": {
+    "about": "cat about.md",
+    "skills": "htop --sort=passion",
+    "projects": "ls -la --pinned",
+    "contact": "ping quentin"
+  },
+  "about": {
+    "paragraphs": [
+      "Hi, ich bin **Quentin** — **Fullstack Developer** aus Würzburg. Frontend und Backend mit gleicher Leidenschaft: von der Pixel-perfekten UI bis zur sauberen API-Architektur. ⚡",
+      "Tagsüber Tech-Nerd, nachts *Car Enthusiast* 🚗💨 — und wenn ich weder code noch unter einem Auto liege, findet man mich in irgendeiner Game-Lobby. 🎮",
+      "Mein Daily Driver ist **Arch Linux** (yes, I use Arch, btw 🐧), mein Setup versioniert mit GNU Stow, mein Zuhause per Home Assistant automatisiert. Ich baue Editor-Forks in Rust, Minecraft-Mods in Java, iOS-Tweaks in Objective-C und Tools für AI-Agent-Workflows in Python.",
+      "Was mich antreibt: **Clean Code** — und gelegentlich Reifenrauch."
+    ],
+    "quote": "„Code during the day, race at night, game in between.“ 🏎️🎮",
+    "facts": [
+      {
+        "icon": "📍",
+        "key": "Location",
+        "value": "Würzburg, Bayern"
+      },
+      {
+        "icon": "🎂",
+        "key": "Baujahr",
+        "value": "2005 · {age} Jahre",
+        "compute": "age"
+      },
+      {
+        "icon": "💻",
+        "key": "Role",
+        "value": "Fullstack Developer"
+      },
+      {
+        "icon": "🐧",
+        "key": "OS",
+        "value": "Arch Linux, btw"
+      },
+      {
+        "icon": "🏎️",
+        "key": "Fuel",
+        "value": "Cars & Coffee"
+      },
+      {
+        "icon": "🎮",
+        "key": "AFK",
+        "value": "Gaming"
+      },
+      {
+        "icon": "🐙",
+        "key": "GitHub",
+        "value": "[@Qu3ntinS](https://github.com/Qu3ntinS) · seit 2020"
+      }
+    ],
+    "logTitle": "$ git log --reverse --life",
+    "log": [
+      {
+        "hash": "a04f7c2",
+        "year": "2005",
+        "msg": "**init:** quentin joined the world 🎂"
+      },
+      {
+        "hash": "9e2b8d1",
+        "year": "2020",
+        "msg": "**feat:** erster Auftritt auf GitHub"
+      },
+      {
+        "hash": "3c7a1f0",
+        "year": "2021",
+        "msg": "**wip:** erste Portfolio-Experimente in HTML"
+      },
+      {
+        "hash": "b5d9e44",
+        "year": "2024",
+        "msg": "**feat:** Smarthome-Setup mit Home Assistant"
+      },
+      {
+        "hash": "7f1c0aa",
+        "year": "2025",
+        "msg": "**chore:** Arch-Rice & Dotfiles, synced mit Stow"
+      },
+      {
+        "hash": "e83d5b9",
+        "year": "2026",
+        "msg": "**feat:** ZedRail (Rust), AI-Agent-Tools & Minecraft-Mods"
+      }
+    ]
+  },
+  "skills": {
+    "note": "// Level = Selbsteinschätzung, abgeleitet aus meinen öffentlichen Repos — einfach die data-level-Werte anpassen.",
+    "chips": [
+      "GPUI",
+      "GNU Stow",
+      "FabricMC",
+      "PGO / ThinLTO",
+      "GitHub Releases",
+      "Reverse Engineering",
+      "iOS-Tweaks",
+      "Linux-Ricing",
+      "Minecraft-Mods",
+      "Smarthome"
+    ],
+    "groups": [
+      {
+        "title": "frontend",
+        "items": [
+          {
+            "name": "TypeScript",
+            "level": 90
+          },
+          {
+            "name": "Next.js / React",
+            "level": 88
+          },
+          {
+            "name": "JavaScript",
+            "level": 90
+          },
+          {
+            "name": "HTML & CSS",
+            "level": 92
+          }
+        ]
+      },
+      {
+        "title": "backend",
+        "items": [
+          {
+            "name": "Node.js",
+            "level": 84
+          },
+          {
+            "name": "Python",
+            "level": 82
+          },
+          {
+            "name": "REST & APIs",
+            "level": 86
+          },
+          {
+            "name": "Docker",
+            "level": 68
+          }
+        ]
+      },
+      {
+        "title": "systems & native",
+        "items": [
+          {
+            "name": "Rust (GPUI)",
+            "level": 76
+          },
+          {
+            "name": "Java (FabricMC)",
+            "level": 72
+          },
+          {
+            "name": "C / C++",
+            "level": 64
+          },
+          {
+            "name": "Objective-C (iOS)",
+            "level": 58
+          }
+        ]
+      },
+      {
+        "title": "workflow & ops",
+        "items": [
+          {
+            "name": "Linux (Arch, btw)",
+            "level": 95
+          },
+          {
+            "name": "Git & GitHub",
+            "level": 92
+          },
+          {
+            "name": "AI-Agent-Workflows",
+            "level": 85
+          },
+          {
+            "name": "Home Assistant",
+            "level": 74
+          }
+        ]
+      }
+    ]
+  },
+  "stats": {
+    "note": "// Telemetrie · Stand: November 2026 · Volllast seit 2020 🏁",
+    "items": [
+      {
+        "value": 1876,
+        "suffix": "",
+        "label": "Contributions · 12 Monate"
+      },
+      {
+        "value": 23,
+        "suffix": "",
+        "label": "Public Repos"
+      },
+      {
+        "value": 7,
+        "suffix": "+",
+        "label": "Sprachen im Einsatz"
+      },
+      {
+        "value": 6,
+        "suffix": "+",
+        "label": "Jahre auf GitHub",
+        "compute": "githubYears"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "name": "zed-rail",
+      "full": "Qu3ntinS/zed-rail",
+      "lang": "Rust",
+      "color": "#dea584",
+      "stars": 5,
+      "desc": "Community-Fork des Zed-Editors: optionale VS-Code-Style Activity-Bar, eigene GitHub Releases, Side-by-Side-Install und Upstream-Sync. Gebaut in Rust mit GPUI.",
+      "tags": [
+        "Rust",
+        "GPUI",
+        "Editor",
+        "Open Source"
+      ],
+      "url": "https://github.com/Qu3ntinS/zed-rail",
+      "home": "https://qu3ntins.github.io/zedrail-website/",
+      "homeLabel": "website"
+    },
+    {
+      "name": "portfolio",
+      "full": "Qu3ntinS/portfolio",
+      "lang": "TypeScript",
+      "color": "#3178c6",
+      "stars": 0,
+      "desc": "Mein persönliches Portfolio — selbst designt und entwickelt mit Next.js & TypeScript. Das hier ist die Terminal-Edition. 😉",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "React"
+      ],
+      "url": "https://github.com/Qu3ntinS/portfolio",
+      "home": "https://quentins.dev",
+      "homeLabel": "quentins.dev"
+    },
+    {
+      "name": "NQ-Tracker",
+      "full": "Qu3ntinS/NQ-Tracker",
+      "lang": "JavaScript",
+      "color": "#f1e05a",
+      "stars": 0,
+      "desc": "Leichtgewichtiger Cross-Platform-Desktop-Time-Tracker für Projekte und Tasks — inklusive Docker-Setup. Zeit ist Reifenrauch, track sie.",
+      "tags": [
+        "Desktop",
+        "JavaScript",
+        "Docker"
+      ],
+      "url": "https://github.com/Qu3ntinS/NQ-Tracker",
+      "home": null
+    },
+    {
+      "name": "shared-agents",
+      "full": "netgrade-digital/shared-agents",
+      "lang": "Python",
+      "color": "#3572A5",
+      "stars": 5,
+      "desc": "Team-Skills & Learnings für AI-Assistenten. Ich contribute Adapter, Features und Reviews — zuletzt den Grok-Build-Adapter.",
+      "tags": [
+        "Python",
+        "AI-Agents",
+        "netgrade-digital"
+      ],
+      "url": "https://github.com/netgrade-digital/shared-agents",
+      "home": null
+    },
+    {
+      "name": "school-utils-release",
+      "full": "Qu3ntinS/school-utils-release",
+      "lang": "Java",
+      "color": "#b07219",
+      "stars": 0,
+      "desc": "Fabric-Mod für den Minecraft-„School“-Gamemode (bekannt durch DrBenx): Utilities für den Schul-Server. Gaming meets Code.",
+      "tags": [
+        "Java",
+        "FabricMC",
+        "Minecraft"
+      ],
+      "url": "https://github.com/Qu3ntinS/school-utils-release",
+      "home": "https://license.quentins.dev/",
+      "homeLabel": "license-portal"
+    },
+    {
+      "name": "dotfiles",
+      "full": "Qu3ntinS/dotfiles",
+      "lang": "Shell / CSS",
+      "color": "#89e051",
+      "stars": 1,
+      "desc": "Mein komplettes Arch-Linux-Rice, sauber versioniert und synced mit GNU Stow. Yes… I use Arch, btw. 🐧",
+      "tags": [
+        "Arch Linux",
+        "Stow",
+        "Ricing"
+      ],
+      "url": "https://github.com/Qu3ntinS/dotfiles",
+      "home": null
+    }
+  ],
+  "lab": {
+    "title": "$ ls ~/lab — Experimente & Spielwiese",
+    "items": [
+      {
+        "name": "vitrine",
+        "href": "https://github.com/Qu3ntinS/vitrine",
+        "desc": "Liquid Glass & Apple-Music-Vibes für Spotify iOS (Objective-C)"
+      },
+      {
+        "name": "selevet-eglantine",
+        "href": "https://github.com/Qu3ntinS/selevet-eglantine",
+        "desc": "Zen-3-getunter Emulator-Build mit PGO & ThinLTO (C++)"
+      },
+      {
+        "name": "rea",
+        "href": "https://github.com/Qu3ntinS/rea",
+        "desc": "Reverse Engineering mit AI-Agents — bis runter zur Native Binary"
+      },
+      {
+        "name": "Smarthome",
+        "href": "https://github.com/Qu3ntinS/Smarthome",
+        "desc": "Meine Home-Assistant-Config — das Zuhause als Code"
+      }
+    ]
+  },
+  "contact": {
+    "lead": "64 bytes from quentin: icmp_seq=1 ttl=64 time=0.4ms — ",
+    "ok": "0% packet loss",
+    "tail": ". Ich beiß nicht, versprochen.",
+    "cards": [
+      {
+        "icon": "🐙",
+        "title": "GitHub",
+        "sub": "@Qu3ntinS",
+        "href": "https://github.com/Qu3ntinS"
+      },
+      {
+        "icon": "🌐",
+        "title": "Website",
+        "sub": "quentins.dev",
+        "href": "https://quentins.dev"
+      },
+      {
+        "icon": "💬",
+        "title": "Discord",
+        "sub": "Server beitreten",
+        "href": "https://discord.gg/NyR3aSq"
+      },
+      {
+        "icon": "📸",
+        "title": "Instagram",
+        "sub": "@quentinthees",
+        "href": "https://instagram.com/quentinthees"
+      },
+      {
+        "icon": "☕",
+        "title": "Buy me a Coffee",
+        "sub": "Fuel für Nachtschichten",
+        "href": "https://www.buymeacoffee.com/quentins"
+      }
+    ]
+  },
+  "footer": {
+    "quote": "„Code during the day, race at night, game in between.“ 🏎️🎮",
+    "badge": "▲ I use Arch, btw",
+    "toast": "I use Arch, btw. 🐧 Danke, dass du fragst.",
+    "konami": "↑ ↑ ↓ ↓ ← → ← → B A",
+    "copy": "QuentinS · handmade mit ☕ & 🏎️ — kein Framework, nur Vibes"
+  }
+}
